@@ -16,18 +16,15 @@ def max_2_sum(array)
         return array[-1] + array[-2]
     end
 end
+
 def sum_to_n?(array,n)
-    if array == [] && n == 0
-	return true
+    l = array.length-1
+    for i in 0..l
+        for j in 0..l
+            if i!=j && array[i] + array[j]==n
+                return true
+            end
+        end
     end
-    arr1 = array
-    arr2 = array
-    arr1.each do |n1|
-          arr2.each do |n2|
-               if n1+n2 == n
-                    return true
-               end
-          end
-     end
-     return false
+    return false
 end

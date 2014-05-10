@@ -3,39 +3,22 @@ def hello(name)
 end
     
 def starts_with_consonant?(s)
-    if s.length == 0
-        return false
-    end
-    
+    return false if s.length == 0
     conso = "BCDFGHJKLMNPQRSTVWXYZ"
-    
     for i in 0..conso.length-1
-        if s.upcase[0].chr == conso[i].chr
-            return true
-        end
+        return true if s.upcase[0].chr == conso[i].chr
     end
     return false
 end
 
 def binary_multiple_of_4?(s)
 
-    if s == "0" 
-    return true
-    end
-
-    if s == "" 
-    return false
-    end
+    return true if s == "0" 
+    return false if s == ""
 
     for i in 0..s.length-1
-        if s[i].chr != "0" and s[i].chr != "1"
-        return false
-        end
+        return false if s[i].chr != "0" and s[i].chr != "1"
     end
         
-    if s[-1].chr == "0" && s[-2].chr == "0"
-        return true
-    else
-        return false
-    end
+    return s[-1].chr == "0" && s[-2].chr == "0"? true:false
 end

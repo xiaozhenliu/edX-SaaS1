@@ -21,9 +21,7 @@ def sum_to_n?(array,n)
     l = array.length-1
     for i in 0..l
         for j in 0..l
-            if i!=j && array[i] + array[j]==n
-                return true
-            end
+            return true if i!=j && array[i] + array[j]==n
         end
     end
     return false
